@@ -1,10 +1,10 @@
 - hosts: all
   tasks:'
     - name: Print the package facts
-      #win_command: powershell.exe Get-WmiObject -Class Win32_Product
+      win_command: powershell.exe Get-WmiObject -Class Win32_Product
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Citrix Workspace(DV) | select Name, Version
      # win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
-      win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
+     #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
      # args:
      #  stdin: 
       #become: yes
