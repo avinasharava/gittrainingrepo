@@ -1,7 +1,8 @@
 - hosts: all
   tasks:
-    - name: Find files in multiple paths
-      win_command: get-package
+    - name: Find files in path
+      ansible.windows.win_find:
+        paths: C:\Temp
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
