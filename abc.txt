@@ -1,2 +1,4 @@
-jbsqdnwnd
-bghegqeoqje
+- hosts: all
+  tasks:
+    - debug:
+        msg: "hi"
