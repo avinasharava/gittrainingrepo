@@ -2,7 +2,7 @@
   tasks:'
     - name: Print the package facts
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product
-      win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq 'Citrix Workspace(DV)'
+      win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Citrix Workspace(DV)
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
      # args:
      #  stdin: 
