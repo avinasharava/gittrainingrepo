@@ -4,7 +4,7 @@
       win_command: powershell.exe -
       args:
        stdin: Get-Package -Name notepad++ -AllVersions
-      become: yes
+      #become: yes
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
