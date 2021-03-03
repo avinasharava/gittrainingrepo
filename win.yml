@@ -2,8 +2,8 @@
   tasks:
     - name: Print the package facts
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product
-      #win_command: Get-WmiObject -Class Win32_Product | where vendo -eq CodeTwo | select Name, Version
-      win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
+      win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq PuTTY*
+      #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
      # args:
      #  stdin: 
       #become: yes
