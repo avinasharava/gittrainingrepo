@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: Print the package facts
-      win_command: powershell.exe Get-Package
+      win_command: powershell.exe get-package
      # args:
      #  stdin: 
       #become: yes
