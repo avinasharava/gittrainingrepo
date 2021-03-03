@@ -1,8 +1,10 @@
 - hosts: all
   tasks:
     - name: Print the package facts
-      win_command: get-package
-       #var: ansible_facts.packages
+      win_command: powershell.exe -
+      args:
+       stdin: Get-Package -Name notepad++ -AllVersions
+      become: yes
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
