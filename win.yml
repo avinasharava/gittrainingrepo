@@ -1,8 +1,8 @@
 - hosts: all
   tasks:
     - name: Print the package facts
-      ansible.builtin.debug:
-       var: ansible_facts.packages
+      win_command: get-package
+       #var: ansible_facts.packages
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
