@@ -1,9 +1,10 @@
 - hosts: all
   tasks:
-    - name: List the packages in windows
-      win_find: 
-         paths: C:\*
-         #patterns: notepad
+    - name: Find files in multiple paths
+      win_find:
+        paths:
+          - C:\Temp
+          - D:\Temp
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
