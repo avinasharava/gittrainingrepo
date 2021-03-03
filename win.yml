@@ -1,9 +1,9 @@
 - hosts: all
   tasks:
     - name: Print the package facts
-      win_command: powershell.exe -
-      args:
-       stdin: Get-Package -Name notepad++ -AllVersions
+      win_command: powershell.exe - Get-Package -Name notepad++ -AllVersions
+     # args:
+     #  stdin: 
       #become: yes
       register: notepad_package
     - debug:
