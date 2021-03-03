@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: List the packages in windows
-      win_shell: findstr -i "notepad++"
+      win_shell: findstr "notepad++" | find /c ":"
       register: notepad_package
     - debug:
         msg: "this is {{ package_list }}"
