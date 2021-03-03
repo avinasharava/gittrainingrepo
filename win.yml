@@ -2,7 +2,7 @@
   tasks:
     - name: List the packages in windows
       win_find: 
-         paths: D:\Temp
+         paths: C:\Temp
          patterns: notepad
       register: notepad_package
     - debug:
