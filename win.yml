@@ -1,7 +1,9 @@
 - hosts: all
   tasks:
-    - name: Get package content
-      win_shell: powershell.exe get-package -name notepad*
+   # - name: Get package content
+    - name: Ensure 7-Zip is installed via win_command
+      win_command: C:\Windows\System32\msiexec.exe /i C:\temp\7z.msi /qn /norestart
+      when: 7zip_installed.exists == false
       register: result
     - debug:
         var: result
