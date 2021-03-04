@@ -4,14 +4,18 @@
    - name: Run multi-lined shell commands
      win_shell: |
        $available = $false
+       #$InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
        $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
-       $InstalledSoftware =  get-package -name notepad* |Select Name
        foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -match "Notepad++"){
-       $available = $obj.GetValue('DisplayName')
-       }
-       }
-       $available
+       $obj.GetValue('DisplayName')
+        }
+
+      # foreach($obj in $InstalledSoftware){
+      # if($obj.GetValue('DisplayName') -match "Notepad++"){
+      # $available = $obj.GetValue('DisplayName')
+      # }
+      # }
+      # $available
      register: result
    - debug:
         var: result
