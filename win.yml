@@ -4,12 +4,12 @@
    - name: Run multi-lined shell comman
      win_shell: |
        $available = $false
-       $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
+       $InstalledSoftware = Get-ChildItem "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
        #foreach($obj in $InstalledSoftware){
        #$obj.GetValue('DisplayName')
        # }
        foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -match "Microsoft"){
+       if($obj.GetValue('DisplayName') -match "Notepad++"){
        $available = $obj.GetValue('DisplayName')
        $available_version = $obj.GetValue('DisplayVersion')
        
