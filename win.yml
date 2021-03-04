@@ -4,13 +4,13 @@
       win_file:
         path: C:\Temp\foo.conf
         state: touch
-     - name: set content in file
-       win_lineinfile:
+    - name: set content in file
+      win_lineinfile:
          path: C:\Temp\foo.conf  
          line: '$available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available'
          state: present
-       register: result  
-     - debug:
+      register: result  
+    - debug:
          var: result
          
     #- name: Print the package facts
