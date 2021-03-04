@@ -8,7 +8,6 @@
        #foreach($obj in $InstalledSoftware){
        #$obj.GetValue('DisplayName')
        # }
-
        foreach($obj in $InstalledSoftware){
        if($obj.GetValue('DisplayName') -match "Notepad++"){
        $available = $obj.GetValue('DisplayName')
