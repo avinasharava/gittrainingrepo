@@ -1,9 +1,18 @@
 - hosts: all
   tasks:
+    - name: create script in file
+      win_file:
+        path: C:\Temp\foo.conf
+        state: touch
+     - name: set content in file
+       win_lineinfile:
+         path: C:\Temp\foo.conf  
+         line: '$available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available'
+         state: present
     - name: Print the package facts
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
-      win_command: pwershell.exe  >> $available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available
+      win_command: pwershell.exe C:\Temp\foo.conf
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
