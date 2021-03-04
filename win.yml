@@ -6,10 +6,8 @@
        $available = $false
        $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
        foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -like "Citrix"){
+       if($obj.GetValue('DisplayName') -like "Microsoft"){
        $available = $obj
-       $P = Get-Service
-       Write-Output $P
        }
        }
      register: result
