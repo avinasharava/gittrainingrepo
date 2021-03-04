@@ -11,12 +11,12 @@
        foreach($obj in $InstalledSoftware){
        if($obj.GetValue('DisplayName') -match "Microsoft"){
        $available = $obj.GetValue('DisplayName')
-       #$available_version = $obj.GetValue('DisplayVersion')
+       $available_version = $obj.GetValue('DisplayVersion')
        
        }
        }
        $available 
-       #$available_version
+       $available_version
         
      register: result
    - debug:
