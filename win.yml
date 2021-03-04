@@ -2,7 +2,7 @@
   tasks:
    # - name: Get package content
     - name: Ensure 7-Zip is installed via win_command
-      win_shell: "get-package -name notepad*"
+      win_shell: "pwershell.exe get-package -name notepad*"
       register: result
     - debug:
         var: result
