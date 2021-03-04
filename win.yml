@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: Get package content
-      win_shell: get-package -name notepad*
+      win_shell: powershell.exe get-package -name notepad*
       register: result
     - debug:
         var: result
