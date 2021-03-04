@@ -2,13 +2,13 @@
   tasks:
     - name: create script in file
       win_file:
-        path: C:\Temp\foo.conf
+        path: C:\temp\testfile.txt
         state: touch
-    - name: set content in file
-      win_lineinfile:
-         path: C:\Temp\foo.conf  
-         line: '$available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available'
-         state: present
+    #- name: set content in file
+    - win_lineinfile:
+         path: C:\temp\testfile.txt  
+         newline: '$available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available'
+         #state: present
       register: result  
     - debug:
          var: result
