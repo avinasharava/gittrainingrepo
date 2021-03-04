@@ -2,7 +2,7 @@
   tasks:
    # - name: Get package content
    - name: Run multi-lined shell commands
-     ansible.windows.win_shell: |
+     win_shell: |
        $available = $false
        $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
        foreach($obj in $InstalledSoftware){
