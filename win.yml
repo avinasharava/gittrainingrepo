@@ -2,7 +2,7 @@
   tasks:
    # - name: Get package content
    - name: Run multi-lined shell commands
-     ansible.windows.win_shell: |
+     win_shell: |
        get-package -name notepad*
      register: result
    - debug:
