@@ -1,18 +1,11 @@
 - hosts: all
   tasks:
-    - name: create script in file
-      win_file:
-        path: C:\temp\testfile.txt
-        state: touch
-    #- name: set content in file
-    - win_lineinfile:
-         path: C:\temp\testfile.txt  
-         #newline: '$available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available'
-         newline: welcome to my world
-         #state: present
-      register: result  
+    - name: Get package content
+      win_shell: get-package -name notepad*
+      register: result
     - debug:
-         var: result
+        var: result
+      
          
     #- name: Print the package facts
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product
