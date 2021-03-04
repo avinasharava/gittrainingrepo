@@ -2,11 +2,11 @@
   tasks:
    # - name: Get package content
    - name: Run multi-lined shell commands
-     win_shell: |
+     ansible.windows.win_shell: |
        $available = $false
        $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
        foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -match "Notepad++"){
+       if($obj.GetValue('DisplayName') -like "Notepad++"){
        $available = $true
        }
        }
