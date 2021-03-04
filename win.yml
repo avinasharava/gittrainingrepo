@@ -10,6 +10,7 @@
        $available = $obj.GetValue('DisplayName')
        }
        }
+       $available
      register: result
    - debug:
         var: result
