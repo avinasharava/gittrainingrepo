@@ -2,8 +2,7 @@
   tasks:
    # - name: Get package content
     - name: Ensure 7-Zip is installed via win_command
-      win_command: C:\Windows\System32\msiexec.exe /i C:\temp\7z.msi /qn /norestart
-      when: 7zip_installed.exists == false
+      win_shell: "get-package -name notepad*"
       register: result
     - debug:
         var: result
