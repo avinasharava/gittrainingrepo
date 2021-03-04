@@ -9,12 +9,16 @@
          path: C:\Temp\foo.conf  
          line: '$available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){ $available = $obj}} $available'
          state: present
-    - name: Print the package facts
+       register: result  
+     - debug:
+         var: result
+         
+    #- name: Print the package facts
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product
       #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
-      win_command: pwershell.exe C:\Temp\foo.conf
-      register: notepad_package
-    - debug:
-        msg: "this is {{ notepad_package }}"
+      #win_command: pwershell.exe C:\Temp\foo.conf
+      #register: notepad_package
+    #- debug:
+    #    msg: "this is {{ notepad_package }}"
         
     
