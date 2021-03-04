@@ -5,10 +5,9 @@
      # args:
      #  stdin: 
       #become: yes
-    - name: Touch a file (creates if not present, updates modification time if present)
-      win_file:
-        path: C:\Temp\foo.conf
-        state: touch
+    - name: Find files in path
+      win_find:
+        paths: D:\temp
       #win_command: pwershell.exe  $available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){
       #$available = $obj}} $available
       register: notepad_package
