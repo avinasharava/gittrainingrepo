@@ -8,7 +8,7 @@
        foreach($obj in $InstalledSoftware){
        if($obj.GetValue('DisplayName') -like "Citrix"){
        $available = $obj
-       $P = Get-Package
+       $P = Get-Service
        Write-Output $P
        }
        }
