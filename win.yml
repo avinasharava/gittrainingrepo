@@ -8,14 +8,8 @@
      # args:
      #  stdin: 
       #become: yes
-      win_command: pwershell.exe  $available = $false
-        >> $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
-        >> foreach($obj in $InstalledSoftware){
-        >> if($obj.GetValue('DisplayName') -like "Notepad++*"){
-        >> $available = $obj
-        >> }
-        >> }
-        >> $available
+      win_command: pwershell.exe  $available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){
+      $available = $obj}} $available
       register: notepad_package
     - debug:
         msg: "this is {{ notepad_package }}"
