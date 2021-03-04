@@ -9,7 +9,7 @@
        #$obj.GetValue('DisplayName')
        # }
        foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -match "Notepad++"){
+       if($obj.GetValue('DisplayName') -match "Slack"){
        $available = $obj.GetValue('DisplayName')
        $available_version = $obj.GetValue('DisplayVersion')
        
