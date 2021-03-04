@@ -1,13 +1,7 @@
 - hosts: all
   tasks:'
-    #- name: Print the package facts
-     #win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
-     # args:
-     #  stdin: 
-      #become: yes
-    - name: Find files in path
-      win_find:
-        paths: D:\temp
+    - name: Print the package facts
+      win_command: powershell.exe Get-WmiObject -Class Win32_Product | where Name -eq Notepad | select Name, Version
       #win_command: pwershell.exe  $available = $false  $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall" foreach($obj in $InstalledSoftware){ if($obj.GetValue('DisplayName') -like "Notepad++*"){
       #$available = $obj}} $available
       register: notepad_package
