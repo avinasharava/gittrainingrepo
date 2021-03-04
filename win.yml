@@ -3,7 +3,7 @@
    # - name: Get package content
    - name: Run multi-lined shell commands
      ansible.windows.win_shell: |
-      Get-Package -name notepad*
+       get-package -name notepad*
      register: result
     - debug:
         var: result
