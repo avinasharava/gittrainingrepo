@@ -9,7 +9,7 @@
        #$obj.GetValue('DisplayName')
        # }
        foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -match "Slack Machine-Wide"){
+       if($obj.GetValue('DisplayName') -match "Notepad++"){
        $available = $obj.GetValue('DisplayName')
        }
        }
