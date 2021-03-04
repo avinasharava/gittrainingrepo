@@ -3,7 +3,13 @@
    # - name: Get package content
    - name: Run multi-lined shell commands
      win_shell: |
-       get-package -name notepad*
+       $available = $false
+       $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
+       foreach($obj in $InstalledSoftware){
+       if($obj.GetValue('DisplayName') -match "Notepad++"){
+       $available = $true
+       }
+       }
      register: result
    - debug:
         var: result
