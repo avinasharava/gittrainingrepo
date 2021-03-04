@@ -14,7 +14,7 @@
        }
      register: result
    - debug:
-        var: result.stdout_lines
+        var: result
       
          
     #- name: Print the package facts
