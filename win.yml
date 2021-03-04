@@ -1,9 +1,10 @@
 - hosts: all
   tasks:
    # - name: Get package content
-    - name: Ensure 7-Zip is installed via win_command
-      win_shell: "Get-Package -name notepad*"
-      register: result
+   - name: Run multi-lined shell commands
+     ansible.windows.win_shell: |
+      Get-Package -name notepad*
+     register: result
     - debug:
         var: result
       
