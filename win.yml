@@ -7,7 +7,7 @@
        $InstalledSoftware = Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
        foreach($obj in $InstalledSoftware){
        if($obj.GetValue('DisplayName') -like "Notepad++"){
-       $available = $true
+       $available = $obj
        }
        }
      register: result
