@@ -4,7 +4,7 @@
       win_copy:
         src: /tmp/testcopy.txt
         remote_src: true
-        dest: C:\Temp\
+        dest: C:\
       register: copyresult
     - debug:
         var: copyresult
