@@ -6,8 +6,9 @@
     #    state: touch
     - win_lineinfile:
         path: C:\Temp\test.txt
-        line: Line added to file
-        newline: windows
+        line: add new Line to file
+        state: present
+        #newline: windows
       register: copyresult
     - debug:
         var: copyresult.stdout
