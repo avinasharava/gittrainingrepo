@@ -1,11 +1,11 @@
 - hosts: all
   tasks:
     - name: copy file between locations on the remote host
-      win_copy:
-        src: C:\Temp\test.txt
-        dest: C:\
-        remote_src: true
-    #- win_shell: Get-Content -path C:\Temp\test.txt
+      #win_copy:
+      #  src: C:\Temp\test.txt
+      #  dest: C:\
+      #  remote_src: true
+    - win_shell: Get-Content -path C:\test.txt
        # path: C:\Temp\test.txt
        # line: add new Line to file
        # state: present
