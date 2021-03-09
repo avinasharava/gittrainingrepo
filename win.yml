@@ -1,6 +1,6 @@
 - hosts: all
   tasks:
-    - name: copy file between locations on the remote host
+    #- name: copy file between locations on the remote host
       #win_copy:
       #  src: C:\Temp\test.txt
       #  dest: C:\
