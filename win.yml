@@ -3,7 +3,7 @@
     - name: copy file between locations on the remote host
       win_copy:
         src: /tmp/testcopy.txt
-        remote_src: true
+        #remote_src: true
         dest: C:\
       register: copyresult
     - debug:
