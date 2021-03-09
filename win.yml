@@ -4,10 +4,10 @@
     #  win_copy:
     #    path: C:\Temp\test.txt
     #    state: touch
-    - win_lineinfile:
-        path: C:\Temp\test.txt
-        line: add new Line to file
-        state: present
+    - win_shell: Get-Content -path C:\Temp\test.txt
+       # path: C:\Temp\test.txt
+       # line: add new Line to file
+       # state: present
         #newline: windows
       register: copyresult
     - debug:
