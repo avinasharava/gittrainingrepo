@@ -11,7 +11,7 @@
         #newline: windows
       register: copyresult
     - debug:
-        var: copyresult.stdout
+        var: copyresult
    
       
          
