@@ -3,7 +3,7 @@
     - name: copy file between locations on the remote host
       win_copy:
         src: C:\Temp\test.txt
-        dest: D:\Temp\
+        dest: C:\
         remote_src: true
     #- win_shell: Get-Content -path C:\Temp\test.txt
        # path: C:\Temp\test.txt
