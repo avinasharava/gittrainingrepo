@@ -1,9 +1,13 @@
 - hosts: all
   tasks:
-    - name: copy file between locations on the remote host
-      win_file:
+    #- name: copy file between locations on the remote host
+    #  win_copy:
+    #    path: C:\Temp\test.txt
+    #    state: touch
+    - win_lineinfile:
         path: C:\Temp\test.txt
-        state: touch
+        line: Line added to file
+        newline: windows
       register: copyresult
     - debug:
         var: copyresult
