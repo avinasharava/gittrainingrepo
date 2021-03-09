@@ -1,26 +1,14 @@
 - hosts: all
   tasks:
-   # - name: Get package content
-   - name: Run multi-lined shell comman
-     win_shell: |
-       $available = $false
-       $InstalledSoftware = Get-ChildItem "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
-       #foreach($obj in $InstalledSoftware){
-       #$obj.GetValue('DisplayName')
-       # }
-       foreach($obj in $InstalledSoftware){
-       if($obj.GetValue('DisplayName') -match "python"){
-       $available = $obj.GetValue('DisplayName')
-       $available_version = $obj.GetValue('DisplayVersion')
-       
-       }
-       }
-       $available 
-       $available_version
-        
-     register: result
-   - debug:
-        var: result
+    - name: copy file between locations on the remote host
+      win_copy:
+        src: /tmp/testcopy.txt
+        remote_src: true
+        dest: C:\Temp\
+      register: copyresult
+    - debug:
+        var: copyresult
+   
       
          
     #- name: Print the package facts
