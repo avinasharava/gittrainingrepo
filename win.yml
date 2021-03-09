@@ -1,10 +1,9 @@
 - hosts: all
   tasks:
     - name: copy file between locations on the remote host
-      ansible.windows.win_copy:
-        src: /tmp/testcopy.txt
-        #remote_src: true
-        dest: C:\
+      win_file:
+        path: C:\Temp\test.txt
+        state: touch
       register: copyresult
     - debug:
         var: copyresult
