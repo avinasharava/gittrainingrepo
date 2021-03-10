@@ -4,6 +4,7 @@
       fetch:
          src: C:\Temp\test2.txt
          dest: /tmp/
+         flat: yes
     #- name: copy file between locations on the remote host
     #- win_file:
      #     path: C:\Temp\test2.txt
