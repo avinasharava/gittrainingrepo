@@ -1,9 +1,13 @@
 - hosts: all
   tasks:
+    - name: fetch file
+      fetch:
+         src: C:\Temp\test2.txt
+         dest: /tmp/
     #- name: copy file between locations on the remote host
-    - win_file:
-          path: C:\Temp\test2.txt
-          state: touch
+    #- win_file:
+     #     path: C:\Temp\test2.txt
+     #     state: touch
       #win_copy:
       #  src: C:\Temp\test.txt
       #  dest: C:\
