@@ -3,7 +3,7 @@
     - name: fetch file
       fetch:
          src: C:\Temp\test2.txt
-         dest: /tmp/
+         dest: /tmp/abc.txt
          flat: yes
     #- name: copy file between locations on the remote host
     #- win_file:
